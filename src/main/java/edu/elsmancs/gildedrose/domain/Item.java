@@ -2,7 +2,7 @@ package edu.elsmancs.gildedrose.domain;
 
 final class Item {
 	
-    private final String name = "";
+    private final String name;
     private int sell_in = 0;
     private int quality = 0;
 

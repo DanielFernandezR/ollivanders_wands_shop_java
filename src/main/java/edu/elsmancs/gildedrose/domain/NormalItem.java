@@ -32,13 +32,13 @@ public class NormalItem {
         }
     }
 
-    public void update_quality() {
+    public void updateQuality() {
     	if (getSell_in() > 0) {
             computeQuality(-1);
     	}
     	else {
     		computeQuality(-2);
     	}
-    	item.set_Sellin();
+    	item.setSell_in();
     }
 }
