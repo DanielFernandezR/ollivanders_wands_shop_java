@@ -20,7 +20,11 @@ public class NormalItem {
 		return item.getQuality();
 	}
 	
-    private void computeQuality(int value) {
+	public void setSell_in() {
+	    item.setSell_in();
+	    }
+	
+    void computeQuality(int value) {
         if (getQuality() + value > 50) {
             item.setQuality(50);
         }
@@ -34,10 +38,10 @@ public class NormalItem {
 
     public void updateQuality() {
     	if (getSell_in() > 0) {
-            computeQuality(-1);
+            this.computeQuality(-1);
     	}
     	else {
-    		computeQuality(-2);
+    		this.computeQuality(-2);
     	}
     	item.setSell_in();
     }
