@@ -3,8 +3,10 @@ package edu.elsmancs.gildedrose.inheritancetests;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import edu.elsmancs.gildedrose.domain.Backstage;
 import edu.elsmancs.gildedrose.domain.NormalItem;
 import edu.elsmancs.gildedrose.domain.Sulfuras;
+import edu.elsmancs.gildedrose.domain.AgedBrie;
 
 
 
@@ -47,15 +49,16 @@ public class InheritanceTest {
     @Test
     public void crearAgedBrie() {
 
-        Sulfuras itemAB = new Sulfuras("Aged Brie", 2, 0);
+        AgedBrie itemAB = new AgedBrie("Aged Brie", 2, 0);
         assertEquals("Aged Brie", itemAB.getName());
         assertEquals(2, itemAB.getSell_in(), 0);
         assertEquals(0, itemAB.getQuality(), 0);
     }
     
+    @Test
     public void updateQualityAgedBrie() {
 
-        Sulfuras itemAB = new Sulfuras("Aged Brie", 8, 21);
+    	AgedBrie itemAB = new AgedBrie("Aged Brie", 8, 21);
         itemAB.updateQuality();
         assertEquals(7, itemAB.getSell_in(), 0);
         assertEquals(22, itemAB.getQuality(), 0);
@@ -79,5 +82,21 @@ public class InheritanceTest {
         assertEquals(21, itemS.getQuality(), 0);
     }
     
+    @Test
+    public void crearBackstage() {
+
+        Backstage itemBS = new Backstage("BackStagePass", 10, 20);
+        assertEquals("BackStagePass", itemBS.getName());
+        assertEquals(10, itemBS.getSell_in(), 0);
+        assertEquals(20, itemBS.getQuality(), 0);
+    }
     
+    @Test
+    public void updateQualityBackstage() {
+
+		Backstage itemBS = new Backstage("BackStagePass", 12, 21);
+        itemBS.updateQuality();
+        assertEquals(11, itemBS.getSell_in(), 0);
+        assertEquals(22, itemBS.getQuality(), 0);
+    }
 }
