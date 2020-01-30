@@ -48,5 +48,4 @@ public class SulfurasTest {
         assertEquals(-4, itemS.getSell_in(), 0);
         assertEquals(23, itemS.getQuality(), 0);
     }
-
 }

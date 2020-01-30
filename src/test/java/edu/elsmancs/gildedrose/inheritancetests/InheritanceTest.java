@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import edu.elsmancs.gildedrose.domain.Backstage;
+import edu.elsmancs.gildedrose.domain.Conjured;
 import edu.elsmancs.gildedrose.domain.NormalItem;
 import edu.elsmancs.gildedrose.domain.Sulfuras;
 import edu.elsmancs.gildedrose.domain.AgedBrie;
@@ -98,5 +99,22 @@ public class InheritanceTest {
         itemBS.updateQuality();
         assertEquals(11, itemBS.getSell_in(), 0);
         assertEquals(22, itemBS.getQuality(), 0);
+    }
+    
+    @Test
+	public void crearConjured() {
+		Conjured conjureditem = new Conjured("Conjured Mana Cake", 10, 20);
+		assertEquals("Conjured Mana Cake", conjureditem.getName());
+        assertEquals(10, conjureditem.getSell_in(), 0);
+        assertEquals(20, conjureditem.getQuality(), 0);
+	}
+    
+    @Test
+    public void updateQualityConjured() {
+
+		Conjured conjureditem = new Conjured("Conjured Mana Cake", 10, 20);
+        conjureditem.updateQuality();
+        assertEquals(9, conjureditem.getSell_in(), 0);
+        assertEquals(18, conjureditem.getQuality(), 0);
     }
 }
