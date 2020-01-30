@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import edu.elsmancs.gildedrose.domain.NormalItem;
+import edu.elsmancs.gildedrose.domain.AgedBrie;
+
 
 
 public class InheritanceTest {
@@ -40,5 +42,22 @@ public class InheritanceTest {
         normal.updateQuality();
         assertEquals(9, normal.getSell_in(), 0);
         assertEquals(0, normal.getQuality(), 0);
+    }
+    
+    @Test
+    public void crearAgedBrie() {
+
+        AgedBrie itemAB = new AgedBrie("Aged Brie", 2, 0);
+        assertEquals("Aged Brie", itemAB.getName());
+        assertEquals(2, itemAB.getSell_in(), 0);
+        assertEquals(0, itemAB.getQuality(), 0);
+    }
+    
+    public void updateQualityAgedBrie() {
+
+        AgedBrie itemAB = new AgedBrie("Aged Brie", 8, 21);
+        itemAB.updateQuality();
+        assertEquals(7, itemAB.getSell_in(), 0);
+        assertEquals(22, itemAB.getQuality(), 0);
     }
 }
