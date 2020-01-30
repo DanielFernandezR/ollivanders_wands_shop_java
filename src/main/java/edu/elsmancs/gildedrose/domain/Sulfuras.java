@@ -8,8 +8,5 @@ public class Sulfuras extends NormalItem{
     }
 	
 	@Override
-	public void updateQuality() {
-    	getSell_in();
-    	getQuality();
-    }
+	public void updateQuality() {}
 }
