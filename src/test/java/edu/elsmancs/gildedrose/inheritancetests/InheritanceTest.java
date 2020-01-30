@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import edu.elsmancs.gildedrose.domain.NormalItem;
-import edu.elsmancs.gildedrose.domain.AgedBrie;
+import edu.elsmancs.gildedrose.domain.Sulfuras;
 
 
 
@@ -47,7 +47,7 @@ public class InheritanceTest {
     @Test
     public void crearAgedBrie() {
 
-        AgedBrie itemAB = new AgedBrie("Aged Brie", 2, 0);
+        Sulfuras itemAB = new Sulfuras("Aged Brie", 2, 0);
         assertEquals("Aged Brie", itemAB.getName());
         assertEquals(2, itemAB.getSell_in(), 0);
         assertEquals(0, itemAB.getQuality(), 0);
@@ -55,9 +55,29 @@ public class InheritanceTest {
     
     public void updateQualityAgedBrie() {
 
-        AgedBrie itemAB = new AgedBrie("Aged Brie", 8, 21);
+        Sulfuras itemAB = new Sulfuras("Aged Brie", 8, 21);
         itemAB.updateQuality();
         assertEquals(7, itemAB.getSell_in(), 0);
         assertEquals(22, itemAB.getQuality(), 0);
     }
+    
+    @Test
+    public void crearSulfuras() {
+
+        Sulfuras itemS = new Sulfuras("Sulfuras", 10, 80);
+        assertEquals("Sulfuras", itemS.getName());
+        assertEquals(10, itemS.getSell_in(), 0);
+        assertEquals(80, itemS.getQuality(), 0);
+    }
+    
+    @Test
+    public void updateQualitySulfuras() {
+
+        Sulfuras itemS = new Sulfuras("Sulfuras", 8, 21);
+        itemS.updateQuality();
+        assertEquals(8, itemS.getSell_in(), 0);
+        assertEquals(21, itemS.getQuality(), 0);
+    }
+    
+    
 }
