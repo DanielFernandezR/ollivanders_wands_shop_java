@@ -3,7 +3,6 @@ package edu.elsmancs.gildedrose.domain;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-import edu.elsmancs.gildedrose.domain.Backstage;
 
 public class BackstageTest {
 	

@@ -19,7 +19,7 @@ public class Backstage extends NormalItem{
     		computeQuality(3);
     	}
     	else {
-    		computeQuality(-51);
+    		computeQuality(-getQuality());
     	}
     	setSell_in();
     }
