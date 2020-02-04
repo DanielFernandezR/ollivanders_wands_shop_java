@@ -7,7 +7,7 @@
 *.war
 *.ear
 *.nar
-hs_err_pid*
+hs_err_pid*grgr
 
 ##############################
 ## Maven
@@ -23,16 +23,6 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
-
-##############################
-## Gradle
-##############################
-bin/
-build/
-.gradle
-.gradletasknamecache
-gradle-app.setting
-!gradle-wrapper.jar
 
 ##############################
 ## IntelliJ
