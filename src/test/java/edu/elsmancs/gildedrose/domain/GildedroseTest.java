@@ -1,19 +1,21 @@
 package edu.elsmancs.gildedrose.domain;
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
 import java.util.List;
-import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
 public class GildedroseTest {
-	
+
 	private Gildedrose shop = null;
 	private NormalItem normal = null;
 	private AgedBrie queso = null;
 	private Sulfuras mortadela = null;
 	private Backstage patatas = null;
-	
+
 	@Before
 	public void setupInventario() {
 		shop = new Gildedrose();
@@ -22,7 +24,7 @@ public class GildedroseTest {
 		mortadela = new Sulfuras("Sulfuras", 8, 80);
 		patatas = new Backstage("BackStagePass", 3, 20);
 	}
-	
+
 	@Test
 	public void addItemTest() {
 		shop.addItem(normal);
@@ -33,7 +35,7 @@ public class GildedroseTest {
 		List<NormalItem> objetos = List.of(normal, queso, mortadela, patatas);
 		assertArrayEquals(objetos.toArray(), shop.inventory().toArray());
 	}
-	
+
 	@Test
 	public void updateQualityTest() {
 		shop.addItem(normal);
@@ -41,13 +43,13 @@ public class GildedroseTest {
 		shop.addItem(mortadela);
 		shop.addItem(patatas);
 		shop.updateQuality();
-		assertEquals(19, shop.inventory().get(0).getQuality(), 0);
-		assertEquals(9, shop.inventory().get(0).getSell_in(), 0);
-		assertEquals(1, shop.inventory().get(1).getQuality(), 0);
-		assertEquals(1, shop.inventory().get(1).getSell_in(), 0);
-		assertEquals(80, shop.inventory().get(2).getQuality(), 0);
-		assertEquals(8, shop.inventory().get(2).getSell_in(), 0);
-		assertEquals(23, shop.inventory().get(3).getQuality(), 0);
-		assertEquals(2, shop.inventory().get(3).getSell_in(), 0);
+		assertEquals(19, ((NormalItem) shop.inventory().get(0)).getQuality(), 0);
+		assertEquals(9, ((NormalItem) shop.inventory().get(0)).getSell_in(), 0);
+		assertEquals(1, ((AgedBrie) shop.inventory().get(1)).getQuality(), 0);
+		assertEquals(1, ((AgedBrie) shop.inventory().get(1)).getSell_in(), 0);
+		assertEquals(80, ((Sulfuras) shop.inventory().get(2)).getQuality(), 0);
+		assertEquals(8, ((Sulfuras) shop.inventory().get(2)).getSell_in(), 0);
+		assertEquals(23, ((Backstage) shop.inventory().get(3)).getQuality(), 0);
+		assertEquals(2, ((Backstage) shop.inventory().get(3)).getSell_in(), 0);
 	}
 }
